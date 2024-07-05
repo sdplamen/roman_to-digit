@@ -91,7 +91,3 @@ roman = {
 
 if __name__ == '__main__':
     main()
-
-tests = {'I', 'V', 'VII', 'IX', 'X', 'MCMVII', 'CM', 'MCXCIX'}
-for i in tests:
-    print(f'{i} = {roman[i]}')
