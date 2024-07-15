@@ -33,7 +33,7 @@ def print_menu():
     Task Manager Menu:
     1. Convert numerals to Roman.
     2. Convert Roman to numerals.
-    3. Exiting...
+    3. Exit.
     '''
     print(menu)
 
