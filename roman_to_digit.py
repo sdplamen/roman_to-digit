@@ -91,3 +91,22 @@ roman = {
 
 if __name__ == '__main__':
     main()
+
+
+# This pseudo-code should get a decimal number and translate it to Roman numerals. Fill in the blanks:
+def DecToRoman(decimal):
+  dec_rom = [(1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'),
+             (100, 'C'), (90, 'XC'), (50, 'L'), (40, 'XL'),
+             (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')]
+
+  result = ''
+
+  for value, numeral in dec_rom:
+      while decimal >= value:
+          result += numeral
+          decimal -= value
+
+  return result
+
+number = int(input())
+print(DecToRoman(number))
