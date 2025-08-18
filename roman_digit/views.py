@@ -81,7 +81,7 @@ def index(request):
 
 class ToRomanView(APIView):
     serializer_class = ToRomanSerializer
-    def get(self, request):
+    def post(self, request):
         serializer = ToRomanSerializer(data=request.data)
         if serializer.is_valid():
             try:
@@ -93,7 +93,7 @@ class ToRomanView(APIView):
 
 class ToDecimalView(APIView):
     serializer_class = ToDecimalSerializer
-    def get(self, request):
+    def post(self, request):
         serializer = ToDecimalSerializer(data=request.data)
         if serializer.is_valid():
             roman_num = serializer.validated_data['roman_number'].upper()
