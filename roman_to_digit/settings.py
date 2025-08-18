@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-PROJECT_APPS = ['roman_digit', 'rest_framework', 'drf_yasg']
+PROJECT_APPS = ['roman_digit']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'drf_spectacular',
 ] + PROJECT_APPS
 
 MIDDLEWARE = [
@@ -120,14 +122,28 @@ STATICFILES_DIRS = [
 ]
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
 }
 
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Rulers API',
+    'DESCRIPTION': 'API for managing rulers and capitals.',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
+
 SWAGGER_SETTINGS = {
-    'USE_SESSION_AUTH': False,
-    'SECURITY_DEFINITIONS': None,
+    'USE_SESSION_AUTH': False,  # Disable Django session auth for Swagger UI
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    },
 }
 
 # Default primary key field type

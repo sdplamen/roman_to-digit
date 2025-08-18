@@ -80,7 +80,8 @@ def index(request):
     return render(request, 'index.html', {'result' :result, 'error' :error})
 
 class ToRomanView(APIView):
-    def post(self, request):
+    serializer_class = ToRomanSerializer
+    def get(self, request):
         serializer = ToRomanSerializer(data=request.data)
         if serializer.is_valid():
             try:
@@ -91,7 +92,8 @@ class ToRomanView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ToDecimalView(APIView):
-    def post(self, request):
+    serializer_class = ToDecimalSerializer
+    def get(self, request):
         serializer = ToDecimalSerializer(data=request.data)
         if serializer.is_valid():
             roman_num = serializer.validated_data['roman_number'].upper()
