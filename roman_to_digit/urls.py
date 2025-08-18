@@ -17,11 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from roman_digit import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('roman_digit.urls')),
-    path('', views.index, name='index'),
 
 ]
