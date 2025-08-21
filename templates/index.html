@@ -3,36 +3,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman numeral Converter</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>{% block title %}Roman Numeral Converter{% endblock %}</title>
 </head>
-    <body>
-        <h1>Roman Numeral Converter</h1>
+<body>
+    <h1>Roman numeral Converter</h1>
 
-        <div class="form-container">
-            <h2>Convert Number to Roman Numeral</h2>
-            <form>
-                <input type="number" name="number" placeholder="Enter a number (1-3999)" required>
+    <div class="container">
+        <div class="converter">
+            <h2>Decimal to Roman</h2>
+            <form method="get" action="/">
                 <input type="hidden" name="action" value="to_roman">
-                <button type="submit">Convert to Roman</button>
+                <input type="number" name="number" placeholder="Enter a number" required>
+                <button type="submit">Convert</button>
             </form>
         </div>
 
-        <div class="form-container">
-            <h2>Convert Roman Numeral to Number</h2>
-            <form>
-                <input type="text" name="roman_number" placeholder="Enter Roman numeral" required>
+        <div class="converter">
+            <h2>Roman to Decimal</h2>
+            <form method="get" action="/">
                 <input type="hidden" name="action" value="to_decimal">
-                <button type="submit">Convert to Number</button>
+                <input type="text" name="roman_number" placeholder="Enter a Roman numeral" required>
+                <button type="submit">Convert</button>
             </form>
         </div>
+    </div>
 
-        {% if error %}
-            <p class="error">{{ error }}</p>
-        {% endif %}
-        {% if result %}
-            <p class="result">Number is : {{ result }}</p>
-        {% endif %}
-    </body>
+    {% if result %}
+        <div class="result">
+            <h2>Result: {{ result }}</h2>
+        </div>
+    {% endif %}
+
+    {% if error %}
+        <div class="error">
+            <h2>Error: {{ error }}</h2>
+        </div>
+    {% endif %}
+</body>
 </html>
