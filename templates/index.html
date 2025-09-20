@@ -8,7 +8,6 @@
 </head>
 <body>
     <h1>Roman numeral Converter</h1>
-
     <div class="container">
         <div class="converter">
             <h2>Decimal to Roman</h2>
@@ -19,6 +18,18 @@
             </form>
         </div>
 
+        {% if result %}
+            <div class="result">
+                <h2>Result: {{ result }}</h2>
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="error">
+                <h2>Error: {{ error }}</h2>
+            </div>
+        {% endif %}
+
         <div class="converter">
             <h2>Roman to Decimal</h2>
             <form method="get" action="/">
@@ -28,17 +39,5 @@
             </form>
         </div>
     </div>
-
-    {% if result %}
-        <div class="result">
-            <h2>Result: {{ result }}</h2>
-        </div>
-    {% endif %}
-
-    {% if error %}
-        <div class="error">
-            <h2>Error: {{ error }}</h2>
-        </div>
-    {% endif %}
 </body>
 </html>
