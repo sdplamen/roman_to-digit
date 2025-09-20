@@ -1,19 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 body {
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: Montserrat, sans-serif;
     background-color: #0f3763;
-}
-
-h1 {
+    align-items: center;
     color: #ede38f;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    width: 80%;
+    align-items: center;
+    width: 50%;
     margin: 20px 0;
 }
 
@@ -22,11 +20,7 @@ h1 {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 45%;
-}
-
-.converter h2 {
-    margin-top: 0;
+    width: 50%;
     color: #ede38f;
 }
 
@@ -36,7 +30,7 @@ input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ede38f;
+    border: 2px solid #ede38f;
     border-radius: 3px;
     color: #ede38f;
 }
@@ -46,7 +40,7 @@ button {
     color: #ede38f;
     padding: 10px 15px;
     border: none;
-    border-radius: 3px;
+    border-radius: 20px;
     cursor: pointer;
 }
 
@@ -56,23 +50,19 @@ button:hover {
 
 .result,
 .error {
-    margin-top: 20px;
-    padding: 15px;
     border-radius: 5px;
-    width: 80%;
+    width: 50%;
     text-align: center;
 }
 
 .result {
-    width: 300px;
     background-color: darkgreen;
-    color: #ede38f;
-    border-radius: 15px;
+    border-radius: 50px;
 }
 
 .error {
-    width: 600px;
+    font-size: 12px;
     background-color: #f2dede;
     color: #a94442;
-    border-radius: 15px;
+    border-radius: 50px;
 }
